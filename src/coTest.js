@@ -1,43 +1,3 @@
-class Product {
-    constructor(name, sellIn, price) {
-        this.name = name;
-        this.sellIn = sellIn;
-        this.price = price;
-    }
-
-    lowPrice(){
-        
-        this.price--;
-
-        this.priceNegative();
-        this.priceGreaterThanFifty();
-    }
-
-    lowSellIn(){
-
-        this.sellIn--;
-
-        if(this.sellIn < 0){
-            this.price--;
-        }
-    }
-
-    priceGreaterThanFifty(){
-        
-        if(this.price > 50){
-            this.price = 50;
-        }
-    }
-
-    priceNegative(){
-        
-        if(this.price < 0){
-            this.price = 0;
-        }
-    }
-}
-
-
 class CarInsurance {
     constructor(products = []) {
         this.products = products;
@@ -49,8 +9,8 @@ class CarInsurance {
             this.products[i].priceNegative();
             this.products[i].priceGreaterThanFifty();
 
-            this.products[i].lowSellIn();
-            this.products[i].lowPrice();
+            this.products[i].calculateSellIn();
+            this.products[i].calculatePrice();
         }
 
         return this.products;
@@ -58,6 +18,5 @@ class CarInsurance {
 }
 
 module.exports = {
-    Product,
     CarInsurance
 }

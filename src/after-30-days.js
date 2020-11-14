@@ -1,11 +1,15 @@
-const {Product,CarInsurance} = require('./coTest');
+const { CarInsurance } = require('./coTest');
+const { FullCoverage,LowCoverage } = require('./products');
+
 const productsAtDayZero = [
     
-    new Product('Low Coverage', 5, 80),
+    new LowCoverage('Low Coverage', 5, 80),
+    new FullCoverage('Full Coverage', 5, 10),
 
 ];
 
 const carInsurance = new CarInsurance(productsAtDayZero);
+
 const productPrinter = function (product) {
     console.log(`${product.name}, ${product.sellIn}, ${product.price}`);
 };
