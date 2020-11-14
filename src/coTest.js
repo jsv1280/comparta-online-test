@@ -16,6 +16,10 @@ class Product {
     lowSellIn(){
 
         this.sellIn--;
+
+        if(this.sellIn < 0){
+            this.price--;
+        }
     }
 
     priceGreaterThanFifty(){
