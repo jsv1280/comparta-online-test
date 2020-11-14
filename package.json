@@ -1,0 +1,12 @@
+{
+  "name": "testcompartaonline",
+  "version": "1.0.0",
+  "description": "Products business unit Car Insurance",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "after-30-days" : "node src/after-30-days"
+  },
+  "author": "Jairo Salazar",
+  "license": "ISC"
+}
