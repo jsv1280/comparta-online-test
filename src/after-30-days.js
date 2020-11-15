@@ -4,20 +4,20 @@ const {
     LowCoverage,
     MegaCoverage,
     SpecialFullCoverage,
-    Supersale
+    Supersale,
+    MediumCoverage
 } = require('./products');
 
 const productsAtDayZero = [
-    
-    new LowCoverage('Low Coverage', 5, 7),
+    new MediumCoverage('Medium Coverage', 10, 20),
     new FullCoverage('Full Coverage', 2, 0),
+    new LowCoverage('Low Coverage', 5, 7),
     new MegaCoverage('Mega Coverage', 0, 80),
     new MegaCoverage('Mega Coverage', -1, 80),
     new SpecialFullCoverage('Special Full Coverage', 15, 20),
     new SpecialFullCoverage('Special Full Coverage', 10, 49),
     new SpecialFullCoverage('Special Full Coverage', 5, 49),
-    new Supersale('Super Sale', 3, 30),
-
+    new Supersale('Super Sale', 3, 30)
 ];
 
 const carInsurance = new CarInsurance(productsAtDayZero);
