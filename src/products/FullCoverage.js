@@ -6,7 +6,7 @@ class FullCoverage extends Product {
     }
 
     calculatePrice(){
-        this.price++;
+        this.price += this.degradationRate();
         this.priceGreaterThanFifty();
     }
 
@@ -15,7 +15,7 @@ class FullCoverage extends Product {
         this.sellIn--;
 
         if(this.sellIn < 0){
-            this.price++;
+            this.price += this.degradationRate();
         }
     }
      
