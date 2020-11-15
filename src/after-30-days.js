@@ -17,7 +17,7 @@ const productsAtDayZero = [
     new SpecialFullCoverage('Special Full Coverage', 15, 20),
     new SpecialFullCoverage('Special Full Coverage', 10, 49),
     new SpecialFullCoverage('Special Full Coverage', 5, 49),
-    new Supersale('Super Sale', 3, 30)
+    new Supersale('Super Sale', 3, 6)
 ];
 
 const carInsurance = new CarInsurance(productsAtDayZero);

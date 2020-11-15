@@ -10,8 +10,12 @@ class Product {
     }
 
     calculatePrice(){
-        
+
         this.price -= this.degradationRate();
+
+        if(this.sellIn < 0){
+            this.price -= this.degradationRate();
+        }
         
         this.priceNegative();
         this.priceGreaterThanFifty();
@@ -19,11 +23,7 @@ class Product {
 
     calculateSellIn(){
 
-        this.sellIn--;
-
-        if(this.sellIn < 0){
-            this.price -= this.degradationRate();
-        }
+        this.sellIn--;        
     }
 
     priceGreaterThanFifty(){
