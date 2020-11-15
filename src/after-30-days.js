@@ -1,10 +1,16 @@
 const { CarInsurance } = require('./coTest');
-const { FullCoverage,LowCoverage } = require('./products');
+const { 
+    FullCoverage,
+    LowCoverage,
+    MegaCoverage 
+} = require('./products');
 
 const productsAtDayZero = [
     
-    new LowCoverage('Low Coverage', 5, 80),
-    new FullCoverage('Full Coverage', 5, 10),
+    new LowCoverage('Low Coverage', 5, 7),
+    new FullCoverage('Full Coverage', 2, 0),
+    new MegaCoverage('Mega Coverage', 0, 80),
+    new MegaCoverage('Mega Coverage', -1, 80),
 
 ];
 
