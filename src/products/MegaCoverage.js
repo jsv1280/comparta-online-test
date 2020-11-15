@@ -1,7 +1,7 @@
 const Product = require('./Product')
 
 class MegaCoverage extends Product {
-    constructor (name, sellIn, price) {
+    constructor (name, sellIn) {
         super(name, sellIn, 80);
     } 
 
