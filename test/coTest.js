@@ -211,4 +211,23 @@ describe("Testing Car Business Logic ",function(){
       expect(carInsurance.products[0].price).to.equal(11);
     });
   });
+
+  describe("Supersale Product",function(){
+
+    it("Degrade price twice as fast as normal products", function(){
+
+      const product = new Supersale('Supersale Product', 8, 10);
+      const container = [
+          product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      carInsurance.updatePrice();
+
+      expect(carInsurance.products[0].price).to.equal(8);
+
+    });
+    
+  });
+
 });
