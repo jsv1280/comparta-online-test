@@ -3,7 +3,8 @@ const {
     FullCoverage,
     LowCoverage,
     MegaCoverage,
-    SpecialFullCoverage
+    SpecialFullCoverage,
+    Supersale
 } = require('./products');
 
 const productsAtDayZero = [
@@ -15,6 +16,7 @@ const productsAtDayZero = [
     new SpecialFullCoverage('Special Full Coverage', 15, 20),
     new SpecialFullCoverage('Special Full Coverage', 10, 49),
     new SpecialFullCoverage('Special Full Coverage', 5, 49),
+    new Supersale('Super Sale', 3, 30),
 
 ];
 
