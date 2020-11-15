@@ -21,10 +21,7 @@ describe("Testing Car Business Logic ",function(){
       new FullCoverage('Full Coverage', 2, 0),
       new LowCoverage('Low Coverage', 5, 7),
       new MegaCoverage('Mega Coverage', 0, 80),
-      new MegaCoverage('Mega Coverage', -1, 80),
       new SpecialFullCoverage('Special Full Coverage', 15, 20),
-      new SpecialFullCoverage('Special Full Coverage', 10, 49),
-      new SpecialFullCoverage('Special Full Coverage', 5, 49),
       new Supersale('Super Sale', 3, 6)
   
     ];
@@ -130,4 +127,34 @@ describe("Testing Car Business Logic ",function(){
 
   }); 
 
-})
+  describe("FullCoverage Product",function(){
+
+    it("Increase price",function(){
+
+        const product = new FullCoverage('Full Coverage', 8, 9);
+        const container = [
+          product
+        ];
+
+        const carInsurance = new CarInsurance(container);
+        carInsurance.updatePrice();
+
+        expect(carInsurance.products[0].price).to.equal(10);
+    });
+
+    it("Increase double price when date has passed",function(){
+
+      const product = new FullCoverage('Full Coverage', 0, 9);
+      const container = [
+        product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      carInsurance.updatePrice();
+
+      expect(carInsurance.products[0].price).to.equal(11);
+    });
+
+  });
+
+});
