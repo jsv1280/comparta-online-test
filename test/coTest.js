@@ -157,4 +157,58 @@ describe("Testing Car Business Logic ",function(){
 
   });
 
+  describe("SpecialFullCoverage Product",function(){
+
+    it("Increase by two when there are 10 days or less",function(){
+
+      const product = new SpecialFullCoverage('Special Full Coverage', 9, 10);
+      const container = [
+        product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      carInsurance.updatePrice();
+
+      expect(carInsurance.products[0].price).to.equal(12);
+    });
+
+    it("Increase by three when there are 5 days or less",function(){
+
+      const product = new SpecialFullCoverage('Special Full Coverage', 4, 15);
+      const container = [
+        product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      carInsurance.updatePrice();
+
+      expect(carInsurance.products[0].price).to.equal(18);
+    });
+
+    it("Drop to zero when no more days left",function(){
+
+      const product = new SpecialFullCoverage('Special Full Coverage', 0, 24);
+      const container = [
+        product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      carInsurance.updatePrice();
+
+      expect(carInsurance.products[0].price).to.equal(0);
+    });
+
+    it("Increase regular rate for be a FullCoverage Product too",function(){
+
+      const product = new SpecialFullCoverage('Special Full Coverage', 15, 10);
+      const container = [
+        product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      carInsurance.updatePrice();
+
+      expect(carInsurance.products[0].price).to.equal(11);
+    });
+  });
 });
