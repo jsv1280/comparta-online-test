@@ -3,6 +3,8 @@ const expect = require('chai').expect;
 const coTest = require('../src/coTest');
 const testProduct = require('../src/products');
 const CarInsurance = coTest.CarInsurance;
+const Product = require('../src/products/Product');
+
 const { 
   FullCoverage,
   LowCoverage,
@@ -111,7 +113,11 @@ describe("Testing Car Business Logic ",function(){
       expect(carInsurance.products[0].price).to.equal(8);
     });
 
-    it("Mega Coverage never decrease in price", function(){
+  }); 
+
+  describe("MegaCoverage Product", function(){
+
+    it("Mega Coverage price must be 80", function(){
       
       const product = new MegaCoverage('Mega Coverage', 8);
       const container = [
@@ -123,9 +129,9 @@ describe("Testing Car Business Logic ",function(){
 
       expect(carInsurance.products[0].price).to.equal(80);
   
-    })
+    });
 
-  }); 
+  })
 
   describe("FullCoverage Product",function(){
 
@@ -230,4 +236,47 @@ describe("Testing Car Business Logic ",function(){
     
   });
 
+  describe("Car Insurance",function(){
+
+    it("Should have properties products and be an array",function(){
+
+        const product = new LowCoverage('Low Coverage', 8, 10);
+        const container = [
+            product
+        ];
+
+        const carInsurance = new CarInsurance(container);
+
+        expect(carInsurance).have.property('products');
+        expect(carInsurance.products).be.an('array');
+
+    });
+
+    it("updatePrice must return an array",function(){
+
+      const product = new LowCoverage('Low Coverage', 8, 10);
+      const container = [
+          product
+      ];
+
+      const carInsurance = new CarInsurance(container);
+      const products = carInsurance.updatePrice();
+      expect(products).to.be.an('array')
+    });
+
+    const product = new SpecialFullCoverage('FCoverage', 8, 10);
+    const container = [
+          product
+    ];
+
+    const carInsurance = new CarInsurance(container);
+    const products = carInsurance.updatePrice();
+
+    products.forEach(product => {
+        it(`Product ${product.name} is derivaded from Product Class `,function(){
+          expect(product).to.be.an.instanceof(Product);
+        })
+    });
+  
+  });
 });
