@@ -37,7 +37,7 @@ describe("Testing Car Business Logic ",function(){
   
   });
 
-  describe("Lower sellIn and price Low Coverage", function() {
+  describe("Normal Constraint and Low-Medium Products", function() {
     
     it("Low Products", function(){
 
